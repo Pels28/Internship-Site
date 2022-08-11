@@ -1,0 +1,39 @@
+{% load static %}
+	<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width-device-width, initial-scale=1.0">
+		<link href="{% static 'css/main.css'%}" rel="stylesheet">
+		<title>CSSInternships  {% block title %}
+		{% endblock %}</title>
+
+		<link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+	</head>
+
+	<body >
+
+                <main role="main">
+
+                    {% block content %}
+
+                     {% endblock %}
+
+                </main>
+
+            </div>
+        </div>
+
+		<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+			crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+
+
+	</html>

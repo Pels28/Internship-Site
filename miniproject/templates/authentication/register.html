@@ -1,0 +1,83 @@
+
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+
+
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+<link href="{% static 'css/style.css' %}" rel="stylesheet" >
+
+
+
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+  <style>
+    .showPasswordToggle{
+    cursor:pointer;
+    transition: all;
+    }
+
+    .showPasswordToggle:hover{
+      transform: scale(1.2);
+    }
+  </style>
+   
+
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin w-100 m-auto">
+
+  <form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+
+    <h1 class="h3 mb-3 fw-normal">Register</h1>
+
+    {%include 'partials/_messages.html' %}
+
+      <div class="form-floating mb-0">
+      <input type="text" class="form-control" id="usernameField" placeholder="Username">
+      <label for="usernameField">Username</label>
+    </div>
+
+    <div class=" invalid-feedback invalid-feedback" style="display: none;">
+    </div>
+    <p class="text-sm text-success usernameSuccessOutput" style="display: none;"></p>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="emailField" placeholder="name@example.com">
+      <label for="emailField">Email address</label>
+    </div>
+    <div class="emailFeedBackArea invalid-feedback" style="display: none;">
+     
+    </div>
+    <p class="text-sm text-success emailSuccessOutput" style="display: none;"></p>
+
+    <div class="form-floating">
+      <input type="password" class="form-control" id="passwordField" placeholder="Password">
+      <label for="passwordField">Password</label>
+    </div>
+    <div class="passwordFeedBackArea invalid-feedback" style="display: none;">
+     
+    </div>
+    
+
+    <div class="checkbox mb-3">
+
+        <small class="float-right py-3 showPasswordToggle">SHOW</small>
+      
+    </div>
+    <button class="w-100 btn btn-lg btn-primary submit-btn" type="submit">Register</button>
+  </form>
+
+</main>
+
+
+    <script src="{% static 'js/register.js' %}"></script>
+  </body>
+</html>
